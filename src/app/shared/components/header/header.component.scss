@@ -1,0 +1,84 @@
+.top-header
+{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 1.25rem;
+    height: 5vh;
+    text-transform: uppercase;
+    background-color: grey;
+    color: white;
+}
+
+.header
+{
+    width: 100vw;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+    &__actions
+    {
+        min-width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1rem;
+    }
+
+    &__top
+    {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: end;
+        color: black;
+    }
+
+
+    &__bottom
+    {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem;
+        border-radius: inherit;
+        background: linear-gradient(to bottom, var(--color-secondary), rgba(0,0,0,0.08));
+    }
+
+    &__logo
+    {
+        width: 33%;
+        font-family: "Supermercado One", sans-serif !important;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: var(--color-primary);
+    }
+
+    &__nav
+    {
+        width: 33%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    &__search
+    {
+        width: 33%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__search-field
+    {
+      border: 2px solid var(--color-primary);
+      border-radius: 20px;
+      padding: 8px 12px;
+    }
+}

@@ -1,0 +1,35 @@
+<!--Top Header-->
+<div class="top-header">
+    <p>50% off on new arrivals!!!</p>
+    <mat-icon>arrow_circle_down</mat-icon>
+</div>
+
+<header class="header">
+    <div class="header__top">
+        <div class="header__actions">
+            @for(menu of topMenu; track menu)
+            {
+            <a class="header__action-link">{{menu}}</a>
+            }
+        </div>
+    </div>
+
+    <div class="header__bottom">
+        <div class="header__logo">
+            <h2 color="primary">BioMe</h2>
+        </div>
+
+        <nav class="header__nav">
+            <a class="header__link">Home</a>
+            <a class="header__link">Products</a>
+            <a class="header__link">About</a>
+            <a class="header__link">Contacts</a>
+        </nav>
+
+        <div class="header__search">
+            <input type="text" class="header__search-field" placeholder="Search">
+            <button class="header__search-btn">Search</button>
+        </div>
+    </div>
+
+</header>

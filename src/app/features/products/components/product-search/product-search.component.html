@@ -1,0 +1,19 @@
+<div class="search">
+    <div class="search__top">
+        <mat-form-field 
+        appearance="outline" 
+        color="primary"
+        subscriptSizing="dynamic">
+            <input matInput placeholder="Search for products" 
+            [(ngModel)]="searchText"
+            >
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="search__bottom">
+        @if(searchText != '')
+        {
+            <p><strong>Search Result: </strong>{{searchText}}</p>
+        }
+    </div>
+</div>
