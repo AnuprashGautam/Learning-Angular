@@ -1,0 +1,58 @@
+<div class="product">
+        <div class="product__image">
+            <button matIconButton="outlined" class="product__favourite-btn">
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <img [src]="product.imageURL" alt="Product Image">
+
+            @if(product.discountPrice)
+            {
+                <div class="product__discount-badge">
+                    {{(100 - (product.discountPrice/product.price *100)).toFixed(0)}}% Off
+                </div>
+            }
+        </div>
+
+        <div class="product__body">
+            <p>Name: {{ product.name}}</p>
+            <p>Description: {{product.description}}</p>
+            <p>Brand: {{product.brand}}</p>
+            @if (product.gender=='MEN') {
+            <p>For Men</p>
+            }
+            @else {
+            <p>For Women</p>
+            }
+            <p>{{product.size.length}} available with {{product.color.length}}</p>
+            <p>Color: {{product.color}} </p>
+            <p>Price: {{product.price}} </p>
+            <p>Discounted Price: {{getDiscountedPrice(product).toFixed(2)}}</p>
+            <!-- <div [ngStyle]="{color:  'red'}">
+                {{product.is_in_inventory ? 'Only '+product.items_left + ' left': 'Not Available'}}
+            </div> -->
+            <div [ngClass]="{'in-stock':product.is_in_inventory, 'out-of-stock':!product.is_in_inventory}">
+                {{product.is_in_inventory ? 'Only '+product.items_left + ' left': 'Not Available'}}
+            </div>
+            <div class="product__qty-btn">
+                <!-- <button matMiniFab [disabled]="this.addToCart >= 10" (click)="incrementCartItems()">
+                    <mat-icon>add</mat-icon>
+                </button>
+                <span>{{addToCart}}</span>
+                <button matMiniFab [disabled]="this.addToCart <= 0" (click)="decrementCartItems()">
+                    <mat-icon>remove</mat-icon>
+                </button> -->
+            </div>
+        </div>
+
+        <div class="product__footer">
+            <button matButton="elevated" [disabled]="!product.is_in_inventory">
+                <mat-icon>payments</mat-icon>
+                Buy
+            </button>
+
+            <button matButton="elevated" [disabled]="!product.is_in_inventory">
+                <mat-icon>add_shopping_cart</mat-icon>
+                Add to Cart
+            </button>
+        </div>
+    </div>

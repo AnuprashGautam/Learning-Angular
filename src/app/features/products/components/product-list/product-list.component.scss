@@ -1,0 +1,94 @@
+.products
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+.in-stock{
+    color: green;
+    font-weight: bold;
+}
+
+.out-of-stock{
+    color: red;
+    font-weight: bold;
+}
+
+.product{
+    padding: 1rem;
+    min-width: 20vw;
+    height: 650px;
+    border: 2px solid rgb(102, 102, 102);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #fafafa;
+
+    &__image
+    {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__body
+    {
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 255px;
+    }
+
+    &__qty-btn
+    {
+        height: 20%;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+
+        span{
+            display: block;
+        }
+    }
+
+    &__footer
+    {
+        border-top: 1px solid grey;
+        padding: 0.5rem;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    &__favourite-btn
+    {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    &__discount-badge{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 30px;
+        background-color: orange;
+        position: absolute;
+        top: 50px;
+        right: 0px;
+    }
+
+}
